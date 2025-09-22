@@ -54,7 +54,12 @@ class Fun(commands.Cog):
             'Você não merece ouvir a resposta'
         ]
         resposta = random.choice(respostas)
-        await ctx.send(resposta)
+        await ctx.reply(resposta)
+
+    @magic_8ball.error
+    async def magic_8ball_error(self, ctx, error):
+        if isinstance(error, commands.MissingRequiredArgument):
+            await ctx.reply("Por favor, faça uma pergunta.")
 
     @commands.command()
     async def gaymetro(self, ctx, member: discord.Member):
