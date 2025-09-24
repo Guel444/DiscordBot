@@ -16,6 +16,7 @@ async def main():
     await bot.load_extension('cogs.moderation')
     await bot.load_extension('cogs.utility')
     await bot.load_extension('cogs.economy')
-    await bot.start("Seu_Token")
+    await bot.load_extension('cogs.xp')
+    await bot.start("Seu_token")
 
 asyncio.run(main())
